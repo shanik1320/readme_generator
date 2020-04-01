@@ -56,9 +56,16 @@ const questions = [
 
 function init() {
     inquirer
+        //asking the questions
         .prompt(questions)
+        //recording the answers
         .then(answers => {
             console.log(answers)
+            //axious call to github to get the user's username
+            axios.get("https://api.github.com/users/"+ answers.username)
+            .then(data =>{
+                console.log(data)
+            })
         })
 
     // Logic for this app shoud be here. You can create more functions if you like. This is just a template for you to start your Homework but it is not required for you to use it.
