@@ -2,6 +2,8 @@
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
+const util = require("util");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 
 const questions = [
@@ -65,6 +67,8 @@ function init() {
             axios.get("https://api.github.com/users/"+ answers.username)
             .then(data =>{
                 console.log(data)
+
+                generateMarkdown(response)
             })
         })
 
