@@ -67,8 +67,14 @@ function init() {
             axios.get("https://api.github.com/users/"+ answers.username)
             .then(data =>{
                 console.log(data)
+                fs.writeFile("generatereadme.md" , generateMarkdown(answers)+ function(err){
+                    if(err){
+                        console.log(err);
+                    }
+                    console.log("File Generated!");
+                })
 
-                generateMarkdown(response)
+                // generateMarkdown(answers)
             })
         })
 
