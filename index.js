@@ -67,10 +67,12 @@ function init() {
             axios.get("https://api.github.com/users/"+ answers.username)
             .then(data =>{
                 console.log(data)
+                //this will make a new file with the user's answers
                 fs.writeFile("generatereadme.md" , generateMarkdown(answers)+ function(err){
                     if(err){
                         console.log(err);
                     }
+                    //if the file is made this message will appear
                     console.log("File Generated!");
                 })
 
