@@ -2,7 +2,6 @@
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
-// const util = require("util");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 
@@ -68,7 +67,6 @@ function init() {
                 .then(data => {
                     console.log(data)
                     //this will make a new file with the user's answers
-                    // const mdFile = generateReadme(answers)
                     fs.writeFile("readme1.md", generateMarkdown(answers), function (err) {
                         if (err) {
                             console.log(err);
