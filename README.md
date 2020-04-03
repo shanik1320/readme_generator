@@ -17,8 +17,10 @@ With this app the user will be able to make a README file just by answering some
 * What command should be run to test?
 * How can the user use your repo?
 
+All this questions will be asked with node command in the terminal. Once the user has answered all of the questions we are able to make a new file and transfer them into them.
 
 ## Installation
 ``
 npm i
 ``
+
