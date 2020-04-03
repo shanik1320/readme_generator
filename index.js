@@ -2,7 +2,7 @@
 const fs = require("fs");
 const axios = require("axios");
 const inquirer = require("inquirer");
-const util = require("util");
+// const util = require("util");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 
@@ -61,23 +61,28 @@ function init() {
         //asking the questions
         .prompt(questions)
         //recording the answers
-        .then(answers => {
-            console.log(answers)
+        .then(function (answers) {
+            // console.log(answers)
             //axious call to github to get the user's username
-            axios.get("https://api.github.com/users/"+ answers.username)
-            .then(data =>{
-                console.log(data)
-                //this will make a new file with the user's answers
-                fs.writeFile("generatereadme.md" , generateMarkdown(answers)+ function(err){
-                    if(err){
-                        console.log(err);
-                    }
-                    //if the file is made this message will appear
-                    console.log("File Generated!");
+            axios.get("https://api.github.com/users/" + answers.username)
+                .then(data => {
+                    console.log(data)
+                    //this will make a new file with the user's answers
+                    // const mdFile = generateReadme(answers)
+                    fs.writeFile("readme1.md", generateMarkdown(answers), function (err) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            //if the file is made this message will appear
+                            console.log("File Generated!");
+                        }
+                        // generateMarkdown(answers)
+                    })
+
+
+
                 })
 
-                // generateMarkdown(answers)
-            })
         })
 
     // Logic for this app shoud be here. You can create more functions if you like. This is just a template for you to start your Homework but it is not required for you to use it.

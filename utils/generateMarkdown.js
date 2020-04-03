@@ -1,12 +1,15 @@
 function generateMarkdown(answers) {
   return `
-  # ${answers.title}
+  
+  # 
+  ${answers.title}
 
   ![badmath](https://img.shields.io/badge/licence-MIT-RED)
   
-  ## ${answers.description}
+  ## 
+  ${answers.description}
   
-  The information about the users description of their project will go here
+  
   
   ## Table of contents
   
@@ -17,25 +20,29 @@ function generateMarkdown(answers) {
   * [Tests](#test)
   * [Questions](#questions)
   
-  ## ${answers.install}
+  ## 
+  ${answers.install}
   ``
-  npm i
+ 
   ``
-  ## ${answers.license}
+  ## 
+  ${answers.license}
   
-  The type of license the user want to use for their project
+ 
   
-  ## ${answers.contribution}
+  ## 
+  ${answers.contribution}
   
-  If the user wants others to contribute to their project
   
-  ## ${answers.test}
   
-  The command used for testing the project
+  ## 
+  ${answers.test}
+  
+  
   
   ## Questions
   
-  The way the user can be reached
+  
 
 `;
 }
